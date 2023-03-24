@@ -305,6 +305,7 @@ struct thread_stat {
 									\
 	uint64_t m_rate[DDIR_RWDIR_CNT];				\
 	uint64_t t_rate[DDIR_RWDIR_CNT];				\
+	uint64_t amount[DDIR_RWDIR_CNT];				\
 	uint64_t rate[DDIR_RWDIR_CNT];					\
 	uint32_t m_iops[DDIR_RWDIR_CNT];				\
 	uint32_t t_iops[DDIR_RWDIR_CNT];				\

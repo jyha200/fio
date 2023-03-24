@@ -476,6 +476,7 @@ bool calc_thread_status(struct jobs_eta *je, int force)
 					io_iops[ddir] += td->io_blocks[ddir];
 				}
 			}
+      je->amount[1] += td->bytes_done[DDIR_WRITE];
 		}
 	} end_for_each();
 
@@ -669,7 +670,7 @@ void display_thread_status(struct jobs_eta *je)
 			free(iops_str[ddir]);
 		}
 	}
-	sprintf(p, "\r");
+	sprintf(p, "%ld\r",je->amount[1]/1000000);
 
 	printf("%s", output);
 
